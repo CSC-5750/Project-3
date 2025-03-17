@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  color: #2d3748;
+}
+
+/* Container Styling */
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 450px;
+  width: 90%;
+  /* Vendor prefixes for backdrop-filter */
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 1rem;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 600;
+  text-align: left;
+  color: #4a5568;
+}
+
+input, select {
+  padding: 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+input:focus, select:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+  outline: none;
+}
+
+button {
+  padding: 12px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Primary Button */
+button[type="submit"] {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(45deg, #764ba2, #667eea);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* View Students Button */
+.view-students button {
+  background: linear-gradient(45deg, #48bb78, #38a169);
+}
+
+.view-students button:hover {
+  background: linear-gradient(45deg, #38a169, #48bb78);
+  transform: translateY(-2px);
+}
+
+/* Updated Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.9);
+  table-layout: auto;
+  /* For earlier tables with backdrop-filter - if needed, uncomment the next lines */
+  /* -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); */
+}
+
+th, td {
+  text-align: left;
+  padding: 15px 20px;
+  border-bottom: 1px solid #EDF2F7;
+}
+
+th {
+  background: linear-gradient(135deg, #6B46C1 0%, #553C9A 100%);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+td {
+  color: #2D3748;
+  vertical-align: top;
+}
+
+/* Delete Button Adjustments */
+.delete-btn {
+  background: none !important;
+  color: #E53E3E !important;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: underline;
+  box-shadow: none !important;
+}
+
+.delete-btn:hover {
+  color: #C53030 !important;
+  text-decoration: none;
+}
+
+/* Column Width Adjustments */
+th:nth-child(1), td:nth-child(1) { /* ID column */
+  width: 10%;
+}
+
+th:nth-child(2), td:nth-child(2) { /* Name column */
+  width: 10%;
+}
+
+th:nth-child(3), td:nth-child(3) { /* Project Title column */
+  width: 15%;
+}
+
+th:nth-child(4), td:nth-child(4) { /* Email column */
+  width: 12%;
+}
+
+/* For a 5th column (Phone) */
+th:nth-child(5), td:nth-child(5) {
+  width: 15%;
+}
+
+/* For a 6th column (Time-Slot) */
+th:nth-child(6), td:nth-child(6) {
+  width: 23%;
+}
+
+th:nth-child(7), td:nth-child(7) { /* Actions column */
+  width: 10%;
+}
+
+/* Back Button */
+.back-button {
+  background: #4299E1;
+  color: white !important;
+  padding: 12px 24px;
+  border-radius: 6px;
+  margin-top: 20px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background: linear-gradient(135deg, #667EEA 0%, #5A67D8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Design for Buttons and Table */
+@media (max-width: 768px) {
+  th, td {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+  
+  .delete-btn {
+    font-size: 13px;
+  }
+}
+
+/* Design for Container and Table */
+@media (max-width: 600px) {
+  .container {
+      padding: 1.5rem;
+  }
+  
+  table {
+      font-size: 14px;
+  }
+
+  th, td {
+      padding: 12px;
+  }
+}
+
+.container {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Outer Container */
+.outer-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Table Container */
+.table-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  /* Vendor prefixes for backdrop-filter */
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  margin: 2rem 0;
+}
+
+/* Header Styling */
+h1 {
+  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Design for Header and Table Container */
+@media (max-width: 768px) {
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  table {
+    font-size: 14px;
+  }
+  
+  th, td {
+    padding: 0.8rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+}
