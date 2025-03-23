@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Confirm Registration Change</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    button { padding: 10px 20px; margin-top: 15px; }
+  </style>
+</head>
+<body>
+  <h1>Confirm Registration Change</h1>
+  <p>You are already registered for the time slot: <strong><%= currentSlot %></strong>.</p>
+  <p>Do you want to change your registration to the new time slot: <strong><%= newSlot %></strong>?</p>
+  <form action="/register" method="POST">
+    <!-- Include all previously submitted data -->
+    <input type="hidden" name="id" value="<%= student.id %>">
+    <input type="hidden" name="first_name" value="<%= student.first_name %>">
+    <input type="hidden" name="last_name" value="<%= student.last_name %>">
+    <input type="hidden" name="project_title" value="<%= student.project_title %>">
+    <input type="hidden" name="email" value="<%= student.email %>">
+    <input type="hidden" name="phone" value="<%= student.phone %>">
+    <input type="hidden" name="time_slot" value="<%= student.time_slot %>">
+    <!-- Set confirm flag to true -->
+    <input type="hidden" name="confirm" value="true">
+    <button type="submit">Yes, change my registration</button>
+  </form>
+  <p><a href="/">Cancel</a></p>
+</body>
+</html>

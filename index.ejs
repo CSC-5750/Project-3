@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Demo Registration</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Student Registration</h2>
+        <form action="/register" method="POST">
+            <label for="id">Student ID:</label>
+            <input type="text" id="id" name="id" required placeholder="8 characters long">
+
+
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" required>
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" required>
+
+            <label for="project_title">Project Title:</label>
+            <input type="text" id="project_title" name="project_title" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" placeholder="999-999-9999" required>
+
+            <label for="time_slot">Choose Time Slot:</label>
+            <select id="time_slot" name="time_slot" required>
+                <% for (let slot in availability) { %>
+                    <% if (availability[slot] > 0) { %>
+                        <option value="<%= slot %>"><%= slot %> - <%= availability[slot] %> seats remaining</option>
+                    <% } else { %>
+                        <option value="<%= slot %>" disabled><%= slot %> - FULL</option>
+                    <% } %>
+                <% } %>
+            </select>
+
+            <!-- Register Button -->
+            <button type="submit" style="display: block; width: 100%; padding: 10px; font-size: 16px; background-color: #28a745; color: white; border: none; cursor: pointer; border-radius: 5px; margin-top: 10px;">
+                Register
+            </button>
+
+            <!-- View Registered Students Button Directly Under Register -->
+            <a href="/students" style="display: block; text-align: center; margin-top: 10px;">
+                <button type="button" style="width: 100%; padding: 10px; font-size: 16px; background-color: #007bff; color: white; border: none; cursor: pointer; border-radius: 5px;">
+                    View Registered Students
+                </button>
+            </a>
+        </form>
+    </div>
+</body>
+</html>
