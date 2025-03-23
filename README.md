@@ -21,3 +21,5 @@ Running the Application:
 
 Run this command to start the server node server.js
 
+ mysql -u root -p < database/schema.sql
+
